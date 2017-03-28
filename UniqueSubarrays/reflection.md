@@ -24,3 +24,5 @@ ArrayWeightCalculator2:
 I wrote this class in order to pass the time limit test on HackerEarth. I replaced ArrayList with array. I also implemented
 improvement 1. ArrayWeightCalculator2 produced expected output in all cases, but only passed one time limit test. Perhaps Java
 is too slow. Will attempt to make performance enhancements, then rewrite using JS. 
+
+Actually I suspect string.split is the issue. Will fix. 

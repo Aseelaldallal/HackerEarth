@@ -1,6 +1,7 @@
 
 
-Problem Source: https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/unique-subarrays/
+Problem Source: 
+https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/unique-subarrays/
 Visit source for constraints, sample input, sample output
 
 Problem: Unique Subarrays

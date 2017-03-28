@@ -1,7 +1,9 @@
 
 
 Problem Source: 
+
 https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/unique-subarrays/
+
 Visit source for constraints, sample input, sample output
 
 Problem: Unique Subarrays
@@ -15,5 +17,7 @@ Output
 Print the summation of unique weights of all the subarrays for each testcase in a separate line.
 
 Time Limit:	1.0 sec(s) for each input file.
+
 Memory Limit:	256 MB
+
 Source Limit:	1024 KB-+

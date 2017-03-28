@@ -1,6 +1,5 @@
 // imports
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class ArrayWeightCalculator2 {
 
@@ -53,14 +52,14 @@ public class ArrayWeightCalculator2 {
 	// Post: Returns true if each element in the array appears only once
 	// Note: Method is O(n)
 	public boolean isUniqueArray(int[] array) {		
-		assert(array != null);	
-		Arrays.sort(array);  // O(nlogn)
-		for(int i=0; i<array.length-1; i++) {
-			if(array[i] == array[i+1]) { //O(n)
-				return false; 
-			}
-		}
-		return true;
+	    Set<Integer> foundNumbers = new HashSet<Integer>();
+	    for (int num : array) {
+	        if(foundNumbers.contains(num)){
+	            return false;
+	        }
+	        foundNumbers.add(num);
+	    }              
+	    return true;   
 	}
 	
 	

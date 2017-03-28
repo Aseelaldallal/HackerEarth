@@ -31,3 +31,6 @@ is too slow. Will attempt to make performance enhancements, then rewrite using J
 is is one of the methods. Will investigate. 
 
 - Changing isUnique implementation. Previous implementation was O(n^2). New implementation is O(n + nlogn) = O(n). Sorting the array (Arrays.sort -- O(nlogn) according to java docs). Then comparing each element to the one after it. 
+
+- Changed isUnique implementation. Using hashset now. Significant improvement in time. HackerEarth shows 0.3 sec improvement in time (input 1), but
+time limit still exceeded for other inputs. Will attempt using bitset. 

@@ -25,4 +25,9 @@ I wrote this class in order to pass the time limit test on HackerEarth. I replac
 improvement 1. ArrayWeightCalculator2 produced expected output in all cases, but only passed one time limit test. Perhaps Java
 is too slow. Will attempt to make performance enhancements, then rewrite using JS. 
 
-Actually I suspect string.split is the issue. Will fix. 
+- Actually I suspect string.split is the issue.
+
+- Removed String.split, used scanner.nextInt() instead. Still didn't solve the problem. After doing some testing, I realized that the speed issue
+is is one of the methods. Will investigate. 
+
+- Changing isUnique implementation. Previous implementation was O(n^2). New implementation is O(n + nlogn) = O(n). Sorting the array (Arrays.sort -- O(nlogn) according to java docs). Then comparing each element to the one after it. 

@@ -1,4 +1,5 @@
 // imports
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayWeightCalculator2 {
@@ -34,7 +35,6 @@ public class ArrayWeightCalculator2 {
 			}
 			totalWeight += this.calculateSubarrayWeight(singleContigousSubarray);
 		}
-		
 		return totalWeight;
 	}
 	
@@ -51,15 +51,15 @@ public class ArrayWeightCalculator2 {
 
 	// Pre: array is not null
 	// Post: Returns true if each element in the array appears only once
+	// Note: Method is O(n)
 	public boolean isUniqueArray(int[] array) {		
 		assert(array != null);	
+		Arrays.sort(array);  // O(nlogn)
 		for(int i=0; i<array.length-1; i++) {
-			for(int j=i+1; j<array.length; j++) {
-				if( array[i] == array[j]) {
-					return false;
-				}
+			if(array[i] == array[i+1]) { //O(n)
+				return false; 
 			}
-		}		
+		}
 		return true;
 	}
 	
@@ -77,18 +77,15 @@ public class ArrayWeightCalculator2 {
         for (int i=0; i < noTestCases; i++) {
             int arraySize = Integer.parseInt(textInputScanner.nextLine()); 
             int[] numbers = new int[arraySize];
-            String arrayLine = textInputScanner.nextLine();           
-            String[] numbersStringArray = arrayLine.split(" ");       
             for(int j=0; j<arraySize; j++) {
-            	numbers[j] = Integer.parseInt(numbersStringArray[j]); 
+            	numbers[j] = textInputScanner.nextInt();
+            }
+            if(textInputScanner.hasNext()) {
+            	textInputScanner.nextLine();	
             }
             System.out.println(myCalc.calculateWeight(numbers));
         }
         textInputScanner.close(); 
-       
-    
-   
 
-	
 	}
 }

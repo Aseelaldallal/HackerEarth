@@ -1,4 +1,4 @@
-
+// imports
 import java.util.Scanner;
 
 public class ArrayWeightCalculator2 {

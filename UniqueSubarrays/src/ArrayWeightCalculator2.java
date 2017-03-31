@@ -26,7 +26,7 @@ public class ArrayWeightCalculator2 {
 		assert(array != null);
 		int totalWeight = 0;
 		for(int i=0; i<=array.length - length; i++) {
-			int[] singleContigousSubarray = new int[length];
+		int[] singleContigousSubarray = new int[length];
 			int subarrayPos = 0; 
 			for(int j=i; j<i+length; j++) {
 				singleContigousSubarray[subarrayPos] = array[j];
@@ -61,6 +61,8 @@ public class ArrayWeightCalculator2 {
 	    }              
 	    return true;   
 	}
+
+
 	
 	
 	/*---------------- MAIN --------------*/

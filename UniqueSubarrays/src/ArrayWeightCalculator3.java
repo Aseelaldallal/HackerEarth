@@ -1,4 +1,4 @@
-import java.math.BigDecimal;
+
 import java.util.*;
 
 
@@ -9,19 +9,18 @@ public class ArrayWeightCalculator3 {
 
 	// Pre: array is not null
 	// Post: Returns the weight of array as per specification
-	public long calculateWeight(int[] array) {
-		long weight = array.length;
-		for(int i=0; i<array.length-1; i++) {
-			HashSet<Integer> set = new HashSet<Integer>(); 
-			set.add(array[i]);
-			for(int j=i+1; j<array.length; j++) {
-				if(set.contains(array[j])) {
-					break;
-				} else {
-					weight += j-i + 1; 
-					set.add(array[j]);
-				}
+	public long calculateWeight(long[] array) {
+		HashSet<Long> set = new HashSet<Long>(); 
+		int j = 0;
+		long weight = 0;
+		for(int i=0; i<array.length; i++) {
+			
+			while(j<array.length && !set.contains(array[j])) {
+				set.add(array[j]);
+				j++; 
 			}
+			weight += (1L *(j-i)*(j-i+1))/2; // (n(n+1))/2		
+			set.remove(array[i]);
 		}
 		return weight; 
 	}
@@ -31,13 +30,13 @@ public class ArrayWeightCalculator3 {
 	public static void main(String[] args) {
 		
 		ArrayWeightCalculator3 myCalc = new ArrayWeightCalculator3();
-        /*Scanner textInputScanner = new Scanner(System.in);
+        Scanner textInputScanner = new Scanner(System.in);
         int noTestCases = Integer.parseInt(textInputScanner.nextLine());
         
         //Read Input
         for (int i=0; i < noTestCases; i++) {
             int arraySize = Integer.parseInt(textInputScanner.nextLine()); 
-            int[] numbers = new int[arraySize];
+            long[] numbers = new long[arraySize];
             for(int j=0; j<arraySize; j++) {
             	numbers[j] = textInputScanner.nextInt();
             }
@@ -46,12 +45,7 @@ public class ArrayWeightCalculator3 {
             }	
             System.out.println(myCalc.calculateWeight(numbers));
         }
-        textInputScanner.close(); */
+        textInputScanner.close(); 
 
-        int[] arr = new int[10000];
-        for(int i=0; i<arr.length; i++) {
-        	arr[i] = i+ 1;
-        }
-        System.out.println(myCalc.calculateWeight(arr));
 	}
 }

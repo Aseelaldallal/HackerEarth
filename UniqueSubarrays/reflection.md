@@ -24,4 +24,4 @@ Notes:
 
 ArrayWeightCalculator3:
 
-Much simpler, cleaner implementation. Passed 7/11 speed tests. 
+Much simpler, cleaner implementation. Passed all speed tests. The key was (n(n+1))/2 and using long rather than int

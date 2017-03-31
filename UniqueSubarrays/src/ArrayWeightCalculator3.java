@@ -11,13 +11,9 @@ public class ArrayWeightCalculator3 {
 	public int calculateWeight(int[] array) {
 		int weight = array.length;
 		for(int i=0; i<array.length-1; i++) {
-			//System.out.println("------------------------------------------------");
-			//System.out.println("i: " + i);
 			HashSet<Integer> set = new HashSet<Integer>(); 
 			set.add(array[i]);
-			//System.out.println("Set looks like: " + set);
 			for(int j=i+1; j<array.length; j++) {
-				//System.out.println("------------------");
 				if(set.contains(array[j])) {
 					break;
 				} else {

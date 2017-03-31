@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.*;
 
 
@@ -8,8 +9,8 @@ public class ArrayWeightCalculator3 {
 
 	// Pre: array is not null
 	// Post: Returns the weight of array as per specification
-	public int calculateWeight(int[] array) {
-		int weight = array.length;
+	public long calculateWeight(int[] array) {
+		long weight = array.length;
 		for(int i=0; i<array.length-1; i++) {
 			HashSet<Integer> set = new HashSet<Integer>(); 
 			set.add(array[i]);
@@ -20,7 +21,6 @@ public class ArrayWeightCalculator3 {
 					weight += j-i + 1; 
 					set.add(array[j]);
 				}
-				
 			}
 		}
 		return weight; 
@@ -31,7 +31,7 @@ public class ArrayWeightCalculator3 {
 	public static void main(String[] args) {
 		
 		ArrayWeightCalculator3 myCalc = new ArrayWeightCalculator3();
-        Scanner textInputScanner = new Scanner(System.in);
+        /*Scanner textInputScanner = new Scanner(System.in);
         int noTestCases = Integer.parseInt(textInputScanner.nextLine());
         
         //Read Input
@@ -46,7 +46,12 @@ public class ArrayWeightCalculator3 {
             }	
             System.out.println(myCalc.calculateWeight(numbers));
         }
-        textInputScanner.close(); 
-        
+        textInputScanner.close(); */
+
+        int[] arr = new int[10000];
+        for(int i=0; i<arr.length; i++) {
+        	arr[i] = i+ 1;
+        }
+        System.out.println(myCalc.calculateWeight(arr));
 	}
 }
